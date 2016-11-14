@@ -230,7 +230,7 @@ textarea {
 
 #text-carousel {
   width: 100%;
-  height: auto;
+  height: auto;	/*Set minimum height*/
   padding: 20px;
   font-family: 'Trocchi', serif;
   font-size: 16px;
@@ -311,6 +311,10 @@ textarea {
     margin-top: 4px;
     margin-left: -17px;
     color: #CCCCCC;
+}
+.contact-email-text a{
+    font-size: large;
+    color: #e91e1e !important;
 }
 .back-to-top{
     position: relative;

@@ -1,6 +1,7 @@
-  $(document).ready(function() {
-    alert('yo');
-    $('#contact_form').bootstrapValidator({
+$(document).ready(function() {
+    //alert('yo');
+    //$('#contact_form').bootstrapValidator({
+        $('#contact_form').formValidation({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -28,6 +29,17 @@
                     }
                 }
             },
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please supply your phone number'
+                    },
+                    phone: {
+                        country: 'US',
+                        message: 'Please supply a vaild phone number with area code'
+                    }
+                }
+            },
             comment: {
                 validators: {
                       stringLength: {
@@ -44,7 +56,7 @@
         })
         .on('success.form.bv', function(e) {
             $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-            alert('Success'):
+            alert('Success');
                 $('#contact_form').data('bootstrapValidator').resetForm();
 
             // Prevent form submission
@@ -62,4 +74,3 @@
             }, 'json');
         });
 });
-
